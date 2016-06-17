@@ -1,0 +1,364 @@
+<html>
+<head>
+<title> Caloriemeter-FOODIE BOOK </title>
+<link rel="icon" href="favicon.gif" type="image/gif" sizes="16x16">
+<link href="css/stylesheet1.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript">
+function calorie(value)
+{
+if (value=="veg")
+{
+document.getElementById("nonveg").style.display="none";
+document.getElementById("veg").style.display="block";
+}
+else 
+{
+document.getElementById("veg").style.display="none";
+document.getElementById("nonveg").style.display="block";
+}
+}
+function valid()
+{
+
+var a=document.f.sname.value;
+if(a=="")
+{
+alert("Please fill the name");
+document.f.sname.focus();
+return false;
+}
+var g=document.f.mob.value;
+if(g=="")
+{
+alert("Please enter the Mobile No.");
+document.f.mob.select();
+return false;
+}
+
+if((g.length >10) || (g.length <10))
+{
+alert(" Your Mobile Number must be  10 digits");
+document.f.mob.select();
+return false;
+}
+
+var em=document.f.email.value;
+if(em=="")
+{
+alert("Please enter the Email address");
+document.f.email.focus();
+return false;
+}
+
+var atpos=em.indexOf("@");
+var dotpos=em.lastIndexOf(".");
+if (atpos<1 || dotpos<atpos+2 || dotpos+2>=em.length)
+  {
+  alert("Please enter a valid e-mail address");
+  document.f.email.focus();
+  return false;
+  }
+}
+
+</script>
+</head>
+<body><div class="container">
+<h1 style="background:url(images/hotel.jpg);padding:80px 0px 80px 0px;color:#ffffff;font-size:40px;text-shadow: 2px 2px #555555;" align="center"></h1>
+
+<div class="l-triangle-top"></div>
+<div class="l-triangle-bottom"></div>
+<ul class="head-nav rectangle">
+<li class="menu"><a href="index.html"><b>HOME</b></a></li>
+<li class="menu"><a href="restaurants.html"><b>RESTAURANTS</b></a></li>
+<li class="menu"><a href="recipes.html"><b>RECIPES</b></a></li>
+<li class="menu"><a href="streetfood.html"><b>STREET FOOD</b></a></li>
+<li class="menu current"><a href="calorie.html"><b>CALORIE-METER</b></a></li>
+</ul>
+<div class="r-triangle-top"></div>
+<div class="r-triangle-bottom"></div>
+<p  style="text-align:center"><font face ="Lucida Handwriting" size="5" color="brown"><b>CALORIE-METER</b></font></p>
+
+<div class="content">
+<p><font face="verdana">Choose the type of food :</font></p>
+<select name="food" id="dropdown" onchange="calorie(this.value)">
+  <option value="0">choose</option>  
+  <option value="veg"> Vegetarian food</option>
+  <option value="nonveg">Non-vegetarian food</option>  
+  
+</select></br></br>
+
+</div>
+<div id="section1">
+
+
+<table class="calorie" id="veg">
+	<thead>
+		<tr>
+			<th>Vegetable (1/2 Cup)</th>
+			<th>Calories</th>
+			<th>Fat (g)</th>
+			<th>Carbos (g)</th>
+			<th>Proteins (g)</th>
+		</tr>
+	</thead>
+	<tbody>
+		
+		
+		<tr>
+			<td class="veg-name">Cauliflower (cooked)</td>
+			<td>14.3</td>
+			<td>0.3</td>
+			<td>2.5</td>
+			<td>1.1</td>
+		</tr>
+		<tr>
+			<td class="veg-name">Zucchini (cooked)</td>
+			<td>14.4</td>
+			<td>0</td>
+			<td>3.5</td>
+			<td>0.6</td>
+		</tr>
+		<tr>
+			<td class="veg-name">Green and Red Bell Peppers</td>
+			<td>19</td>
+			<td>0.1</td>
+			<td>4.6</td>
+			<td>0.6</td>
+		</tr>
+		<tr>
+			<td class="veg-name">Potato</td>
+			<td>57</td>
+			<td>0</td>
+			<td>13</td>
+			<td>1</td>
+		</tr>
+		<tr>
+			<td class="veg-name">Spinach (cooked)</td>
+			<td>20.7</td>
+			<td>0.2</td>
+			<td>3.4</td>
+			<td>2.7</td>
+		</tr>
+		<tr>
+			<td class="veg-name">Mushrooms (cooked)</td>
+			<td>21.1</td>
+			<td>0.4</td>
+			<td>4</td>
+			<td>1.7</td>
+		</tr>
+		<tr>
+			<td class="veg-name">Broccoli (cooked)</td>
+			<td>21.8</td>
+			<td>0.3</td>
+			<td>3.9</td>
+			<td>2.3</td>
+		</tr>
+		<tr>
+			<td class="veg-name">Asparagus (cooked)</td>
+			<td>22</td>
+			<td>0.3</td>
+			<td>3.8</td>
+			<td>2.3</td>
+		</tr>
+		<tr>
+			<td class="veg-name">Pumpkin (cooked)</td>
+			<td>24.5</td>
+			<td>0.1</td>
+			<td>6</td>
+			<td>0.9</td>
+		</tr>
+		<tr>
+			<td class="veg-name">Leek</td>
+			<td>27.1</td>
+			<td>0.1</td>
+			<td>6.3</td>
+			<td>0.7</td>
+		</tr>
+		<tr>
+			<td class="veg-name">Brussel Sprouts</td>
+			<td>30.4</td>
+			<td>0.4</td>
+			<td>6.8</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td class="veg-name">Onion</td>
+			<td>30.4</td>
+			<td>0.1</td>
+			<td>6.9</td>
+			<td>0.9</td>
+		</tr>
+		<tr>
+			<td class="veg-name">Carrot (cooked)</td>
+			<td>35.1</td>
+			<td>0.1</td>
+			<td>8.2</td>
+			<td>0.9</td>
+		</tr>
+		<tr>
+			<td class="veg-name">Peas</td>
+			<td>58.7</td>
+			<td>0.3</td>
+			<td>10.5</td>
+			<td>3.9</td>
+		</tr>
+		
+	</tbody>
+</table>
+
+<table class="calorie" id="nonveg">
+	<thead>
+		<tr>
+			<th>Non-Veg (5lbs)</th>
+			<th>Calories</th>
+			<th>Fat (g)</th>
+			<th>Carbos (g)</th>
+			<th>Proteins (g)</th>
+		</tr>
+	</thead>
+	<tbody>
+		
+		
+		<tr>
+			<td class="veg-name">Chicken lollipop</td>
+			<td>18.3</td>
+			<td>0.3</td>
+			<td>8.5</td>
+			<td>1.1</td>
+		</tr>
+		<tr>
+			<td class="veg-name">Chicken curry</td>
+			<td>10.4</td>
+			<td>0</td>
+			<td>3.5</td>
+			<td>0.6</td>
+		</tr>
+		<tr>
+			<td class="veg-name">Chicken Drumstick</td>
+			<td>10.9</td>
+			<td>0.1</td>
+			<td>4.6</td>
+			<td>0.6</td>
+		</tr>
+		<tr>
+			<td class="veg-name">Palak Chicken</td>
+			<td>87</td>
+			<td>0</td>
+			<td>13</td>
+			<td>1</td>
+		</tr>
+		<tr>
+			<td class="veg-name">Tandoori Murgh</td>
+			<td>90.7</td>
+			<td>0.2</td>
+			<td>3.4</td>
+			<td>2.7</td>
+		</tr>
+		<tr>
+			<td class="veg-name">Mutton Curry</td>
+			<td>78.1</td>
+			<td>0.4</td>
+			<td>4</td>
+			<td>1.7</td>
+		</tr>
+		<tr>
+			<td class="veg-name">Mutton Chops</td>
+			<td>88.9</td>
+			<td>9.3</td>
+			<td>3.9</td>
+			<td>2.3</td>
+		</tr>
+		<tr>
+			<td class="veg-name">Mutton paya</td>
+			<td>98.9</td>
+			<td>0.3</td>
+			<td>3.8</td>
+			<td>2.3</td>
+		</tr>
+		<tr>
+			<td class="veg-name">Mutton kabab</td>
+			<td>28.8</td>
+			<td>0.1</td>
+			<td>9.6</td>
+			<td>0.9</td>
+		</tr>
+		<tr>
+			<td class="veg-name">kheema pakoda</td>
+			<td>28.9</td>
+			<td>0.1</td>
+			<td>6.3</td>
+			<td>0.7</td>
+		</tr>
+		<tr>
+			<td class="veg-name">Kheema chutney</td>
+			<td>30.4</td>
+			<td>0.4</td>
+			<td>98.8</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td class="veg-name">Kheema balls</td>
+			<td>98.4</td>
+			<td>0.1</td>
+			<td>6.9</td>
+			<td>0.9</td>
+		</tr>
+		<tr>
+			<td class="veg-name">Fish fry</td>
+			<td>88.5</td>
+			<td>0.1</td>
+			<td>8.2</td>
+			<td>0.9</td>
+		</tr>
+		<tr>
+			<td class="veg-name">Fish tikka</td>
+			<td>98.7</td>
+			<td>0.3</td>
+			<td>10.5</td>
+			<td>3.9</td>
+		</tr>
+		
+	</tbody>
+</table>
+</div>
+<center><p style="margin-top:-5px"><b>To know more details about the Calories you consume in food, Write to me..! </b></p></center>
+<form name="f" method="post" style="margin-top:-10px" Onsubmit="return valid()">
+<table style="width:550px;margin-left:auto;margin-right:auto">
+<center>
+	
+		<tr>
+			<td align="right">Name:</td>
+			<td align="left"><input type="text" name="sname" size="35"/></td>
+		</tr>
+<tr>
+			<td align="right">Mobile No:</td>
+			<td align="left"><input type="text" name="mob" size="35"/><td>
+		</tr>
+		<tr>
+			<td align="right">Email:</td>
+			<td align="left"><input type="text" name="email" size="35"/><td>
+		</tr>
+<tr>
+			<td align="right" valign="top">Message:</td>
+			<td align="left"><textarea rows=5 cols=35 name="ta"></textarea></td>
+		</tr>
+<tr>
+	
+<td align="left">
+<input type="submit" value="Submit">
+</td>
+	<td align="right">
+<input type="reset" value="Clear">
+</td>
+</tr>
+</center>
+</table>
+</form>
+
+</div>
+<div class="footer">
+		<p>Copyright &copy;  2015 PRATHYUSHA KASAM. All rights reserved.</p>
+	</div>
+</body>
+</html>
